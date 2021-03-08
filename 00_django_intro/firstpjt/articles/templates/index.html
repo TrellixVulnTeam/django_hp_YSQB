@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>호로로롤로로로로</h1>
-    <a href="greetings/">인사</a>
-    <a href="dinners/">점심</a>
-</body>
-</html>
+    <a href="{% url 'greeting' %}">인사</a>
+    <a href="{% url 'dinner' %}">점심</a>
+    <a href="{% url 'throw' %}">throw</a>
+{% endblock %}
