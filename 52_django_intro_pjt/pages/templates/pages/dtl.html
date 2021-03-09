@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h4>for</h4>
+    {% for food in foods %}
+        <li>{{ forloop.counter0 }}{{ food }}</li>
+        {% empty %}
+        <li>지금 음식이 떨어졌습니다.</li>
+    {% endfor %}
+
+    <h4>if</h4>
+    {% if '라면' in foods %}
+        <p>라면을 주문합니다.</p>
+    {% endif %}
+
+    {% for food in foods %}
+        {% if forloop.first %}
+            <P>{{ food }}이 제일 먼저입니다.</P>
+        {% else %}
+            <p>라면이 먼저가 아닙니다. {{food}}</p>
+        {% endif%}
+    {% endfor %}
+
+    {% for num in nums %}
+        {% if num < 50 %}
+            <P class="text-danger">{{ num }}은 50보다 작습니다.</P>
+        {% else %}
+            <p class='text-primary'>{{num}}은 50보다 크다.{{food}}</p>
+        {% endif%}
+    {% endfor %}
+{% endblock content %}
