@@ -8,4 +8,6 @@ urlpatterns = [
     path('dtl/', views.dtl, name='dtl'),
     path('question/', views.question, name='question'),
     path('answer/', views.answer, name='answer'),
+    path('lotto/', views.lotto, name='lotto'),
+    path('dinner/<str:menu>/<int:number>', views.dinner, name='dinner'),
 ]

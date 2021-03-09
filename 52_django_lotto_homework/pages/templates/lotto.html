@@ -1,0 +1,7 @@
+<h1>{{ random_num }}</h1>
+
+<h1>로또 번호입니다.</h1>
+
+{% for pick_number in pick_numbers %}
+    <div class="border rounded-circle">{{ pick_number }}</div>
+{% endfor %}
