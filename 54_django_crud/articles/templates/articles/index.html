@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>index</h1>
+    {{ articles }}
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">제목</th>
+      <th scope="col">내용</th>
+      <th scope="col">상세보기</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {% for article in articles %}
+      <th scope="row">{{article.pk}}</th>
+      <td>{{article.title}}</td>
+      <td>{{article.content}}</td>
+      <td><a href="{% url 'articles:detail' article.pk %}">detail</a></td>
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+{% endblock content %}
+
+
