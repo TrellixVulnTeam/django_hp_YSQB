@@ -1,0 +1,10 @@
+<h1>ㅋㅋㅋㅋ</h1>
+<a href="{% url 'articles:create' %}">new</a>
+<a href="{% url 'articles:new_create' %}">new_create</a>
+
+
+{% for article in articles %}
+<p>{{ article.title }}</p>
+<p>{{ article.content }}</p>
+<p>{{ article.created_at}}</p>
+{% endfor %}

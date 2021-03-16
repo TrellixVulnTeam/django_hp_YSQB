@@ -1,0 +1,6 @@
+{{ article.pk }}
+{{ article.title }}
+{{ article.content }}
+
+<a href="{% url 'articles:update' article.pk %}">update</a>
+<a href="{% url 'articles:delete' article.pk %}">delete</a>
