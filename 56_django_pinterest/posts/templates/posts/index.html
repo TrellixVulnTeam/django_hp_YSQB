@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} 임포트는 파일마다 해줘야한다. {% endcomment %}
+
+{% block content %}
+<link rel="stylesheet" {% static 'posts/style.css' %}>
+<h1>index</h1>
+{% endblock content %}

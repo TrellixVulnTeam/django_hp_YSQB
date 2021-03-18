@@ -1,0 +1,22 @@
+{% load static %} 
+{% comment %} load static은 페이지마다 해줘야한다. {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
+    
+</head>
+<body>
+    {% include 'nav.html' %}
+    
+    <img src="{% static 'lion.jpg' %}">
+    {% block content %}
+    {% endblock content %}
+    <script src="{% static 'bootstrap.js' %}"></script>
+    
+</body>
+</html>
