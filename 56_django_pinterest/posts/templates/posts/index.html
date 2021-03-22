@@ -4,5 +4,11 @@
 
 {% block content %}
 <link rel="stylesheet" {% static 'posts/style.css' %}>
-<h1>index</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for post in posts %}
+        <div class="col">
+        {% include 'posts/card.html'%}
+        </div>
+    {% endfor %}
+    </div>
 {% endblock content %}

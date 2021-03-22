@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>index</h1>
+<a class="btn btn-primary" href="{% url 'articles:create' %}">생성하기</a>
+<div class="row cols-3 cols-md-3 g-4">
+{% for article in articles%}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ article.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.content}}</p>
+                <a href="{% url 'articles:detail' article.pk %}" class="btn btn-primary">자세히보기</a>
+            </div>
+        </div>
+{% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display:flex; justify-content:center; align-items:center; text-align:center; flex-direction: column; height:100vh">
+    <h1>{{ article.title }}</h1>
+    <h2>{{ article.content }}</h2>
+    <img src="{{ article.image.url }}">
+
+<a href="{% url 'articles:update' article.pk %}">수정하기</a>
+</div>
+{% endblock content %}

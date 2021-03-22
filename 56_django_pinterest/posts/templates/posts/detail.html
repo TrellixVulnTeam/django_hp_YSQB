@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ post.image }}
+<a href={% url 'posts:update' post.pk %} class="btn btn-primary"> 수정</a>
+<a href={% url 'posts:delete' post.pk %} class="btn btn-danger"> 삭제</a>
+<hr>
+<img src="{{post.image.url}}" width="80%">
+{% endblock content %}
