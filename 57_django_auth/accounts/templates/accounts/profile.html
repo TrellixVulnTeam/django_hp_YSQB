@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ user_info.username }}님의 프로필입니다.</h1>
+    
+    <hr>
+    <a href="{% url 'accounts:update' %}">회원 정보 수정</a>
+    <a href="{% url 'accounts:delete' %}">회원 탈퇴</a>
+{% endblock content %}
