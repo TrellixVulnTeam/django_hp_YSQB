@@ -16,13 +16,16 @@
   </form>
   <a href="{% url 'articles:index' %}">[back]</a>
   <hr>
+  <h4>댓글 목록</h4>
+  <h5>{{ comments|length }} 개</h5>
   {% for comment in comments %}
     {{ comment }}
     <form action="{% url 'articles:comments_delete' article.pk comment.pk %}" method="POST">
     {% csrf_token %}
     <input type="submit" value="삭제">
     </form>
-    
+  {% empty %}
+    <p>아직 댓글이 없네요...ㄴ</p>
   {% endfor %}
   
   

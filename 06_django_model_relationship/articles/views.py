@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_safe, require_http_methods, require_POST
+from django.http import HttpResponse
 from .models import Article, Comment
 from .forms import ArticleForm, CommentForm
 
@@ -84,7 +85,7 @@ def comments_create(request, pk):
     }
     return render(request, 'articles/detail.html', context)
 
-
+@login_required
 @require_POST
 def comments_delete(request, article_pk, comment_pk):
     comment = get_object_or_404(Comment, pk=comment_pk)
