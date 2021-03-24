@@ -28,6 +28,7 @@ def signup(request):
 def login(request):
     if request.user.is_authenticated:
         messages.add_message(request, messages.WARNING, '이미 로그인 되어 있는 유저입니다.')
+        
         return redirect('accounts:index')
 
     if request.method == 'POST':
